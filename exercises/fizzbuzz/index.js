@@ -14,6 +14,11 @@
 
 // conditionally check for remainder with modulo and log appropriate output
 // refactor by update to conditionally append and start to DRY up code
+// refactor apply DRY methodology by writing reusable methods
+function isMultipleOf(divisor, number) {
+  return number % divisor === 0
+}
+
 function fizzBuzz(n) {
   const count = [...Array(n).keys()].map(i => i + 1);
   const fizz = 'fizz';
@@ -22,11 +27,11 @@ function fizzBuzz(n) {
   for (number of count) {
     let numberToLog = number;
   
-    if (number % 3 === 0) {
+    if (isMultipleOf(3, number)) {
       numberToLog = fizz;
     };
   
-    if (number % 5 === 0) {
+    if (isMultipleOf(5, number)) {
       if (Number.isInteger(numberToLog)) {
         numberToLog = buzz;
       }
