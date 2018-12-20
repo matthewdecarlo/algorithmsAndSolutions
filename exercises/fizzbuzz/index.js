@@ -15,8 +15,8 @@
 // conditionally check for remainder with modulo and log appropriate output
 // refactor by update to conditionally append and start to DRY up code
 // refactor apply DRY methodology by writing reusable methods
-function isMultipleOf(divisor, number) {
-  return number % divisor === 0
+function isMultipleOf(multiple, number) {
+  return number % multiple === 0
 }
 
 function fizzBuzz(n) {
