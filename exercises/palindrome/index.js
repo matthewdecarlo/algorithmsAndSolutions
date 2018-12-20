@@ -8,8 +8,18 @@
 //   palindrome("abcdefg") === false
 const reverse = require('../reversestring/index.js');
 
+// import and use previously written reverse method to find truth
+// function palindrome(str) {
+//   return str === reverse(str)
+// }
+
+// solve with array methods and compare truthness of each oposing character
 function palindrome(str) {
-  return str === reverse(str)
+  return str.split('').every((character, index) => {
+    const oppisiteCharacter = str.length - index - 1;
+
+    return character === str[oppisiteCharacter];
+  })
 }
 
 module.exports = palindrome;
