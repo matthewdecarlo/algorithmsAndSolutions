@@ -7,19 +7,28 @@
 
 // use reduce method to create an object set mapped to the corresponding
 // character count
-// use reduce on the key value pairs to filter out the maximum count.
-function maxChar(str) {
-  const characterCount = str.split('').reduce((characterCount, character) => {
-    characterCount[character] = ++characterCount[character] || 1;
-
-    return characterCount;
-  }, {} )
-
-  const largestCount = Object.entries(characterCount).reduce((a, b) => {
+// use reduce on the key value pairs to filter out the maximum count
+// refactor modularize by separating out into individual methods
+function findMaxCharacter(characterSet) {
+   const maxCharSet = Object.entries(characterSet).reduce((a, b) => {
     return a[1] > b[1] ? a : b;
   });
 
-  return largestCount[0];
+  return maxCharSet[0];
+}
+
+function generateCharacterSet(string) {
+  return string.split('').reduce((characterCount, character) => {
+    characterCount[character] = ++characterCount[character] || 1;
+
+    return characterCount;
+  }, {})
+}
+
+function maxChar(string) {
+  const characterSet = generateCharacterSet(string);
+
+  return findMaxCharacter(characterSet);
 }
 
 module.exports = maxChar;
