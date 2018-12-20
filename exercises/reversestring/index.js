@@ -11,4 +11,11 @@ function reverse(str) {
   return str.split('').reverse().join('')
 }
 
+// OTHER EXAMPLES OF COMPLETION:
+
+// Utilizes reduce to itterate over the array and return a new reversed string.
+// function reverse(str) {
+//   return str.split('').reduce((reverse, character) => character + reverse, '')
+// }
+
 module.exports = reverse;
