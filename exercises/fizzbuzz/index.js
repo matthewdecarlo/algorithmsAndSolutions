@@ -19,28 +19,50 @@ function isMultipleOf(multiple, number) {
   return number % multiple === 0
 }
 
+// function fizzBuzz(n) {
+//   const count = [...Array(n).keys()].map(i => i + 1);
+//   const fizz = 'fizz';
+//   const buzz = 'buzz';
+
+//   for (number of count) {
+//     let numberToLog = number;
+  
+//     if (isMultipleOf(3, number)) {
+//       numberToLog = fizz;
+//     };
+  
+//     if (isMultipleOf(5, number)) {
+//       if (Number.isInteger(numberToLog)) {
+//         numberToLog = buzz;
+//       }
+//       else {
+//         numberToLog += buzz;
+//       }
+//     };
+    
+//     console.log(numberToLog);
+//   }
+// }
+
+// OTHER EXAMPLES OF COMPLETION:
+// completion with for loop iteration
 function fizzBuzz(n) {
-  const count = [...Array(n).keys()].map(i => i + 1);
   const fizz = 'fizz';
   const buzz = 'buzz';
 
-  for (number of count) {
-    let numberToLog = number;
-  
-    if (isMultipleOf(3, number)) {
-      numberToLog = fizz;
-    };
-  
-    if (isMultipleOf(5, number)) {
-      if (Number.isInteger(numberToLog)) {
-        numberToLog = buzz;
-      }
-      else {
-        numberToLog += buzz;
-      }
-    };
-    
-    console.log(numberToLog);
+  for (let i =1; i<=n; i += 1){
+    if (isMultipleOf(3, i) && isMultipleOf(5, i)){
+      console.log(fizz + buzz)
+    }
+    else if (isMultipleOf(3, i)) {
+      console.log(fizz)
+    }
+    else if (isMultipleOf(5, i)) {
+      console.log(buzz);
+    }
+    else {
+      console.log(i);
+    }
   }
 }
 
