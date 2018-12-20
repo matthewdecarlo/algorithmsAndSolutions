@@ -13,23 +13,28 @@
 //   buzz
 
 // conditionally check for remainder with modulo and log appropriate output
+// refactor by update to conditionally append and start to DRY up code
 function fizzBuzz(n) {
   const count = [...Array(n).keys()].map(i => i + 1);
+  const fizz = 'fizz';
+  const buzz = 'buzz';
 
   for (number of count) {
     let numberToLog = number;
   
     if (number % 3 === 0) {
-      numberToLog = 'fizz';
+      numberToLog = fizz;
     };
   
     if (number % 5 === 0) {
-      numberToLog = 'buzz';
+      if (Number.isInteger(numberToLog)) {
+        numberToLog = buzz;
+      }
+      else {
+        numberToLog += buzz;
+      }
     };
-  
-    if (number % 3 === 0 && number % 5 === 0) {
-      numberToLog = 'fizzbuzz';
-    }
+    
     console.log(numberToLog);
   }
 }
