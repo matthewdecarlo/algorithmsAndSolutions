@@ -18,4 +18,15 @@ function reverse(str) {
 //   return str.split('').reduce((reverse, character) => character + reverse, '')
 // }
 
+// Uses a loop to itterate over the array and return a new reversed string.
+// function reverse(str) {
+//   let reversed = ''
+
+//   for (character of str) {
+//     reversed = character + reversed;
+//   }
+
+//   return reversed;
+// }
+
 module.exports = reverse;
