@@ -9,7 +9,7 @@
 //   anagrams('Hi there', 'Bye there') --> False
 // add solution solving with method to reduce and filter the difference within
 // two objects.
-const {generateCharacterSet} = require('../maxchar/index.js');
+// const {generateCharacterSet} = require('../maxchar/index.js');
 
 function parseString(string) {
   return string.replace(/[^\w]/g, '').toLowerCase();
@@ -39,5 +39,13 @@ function anagrams(stringA, stringB) {
 
   return hasDifference;
 }
+
+// add solution using sort
+// function anagrams(stringA, stringB) {
+//   const sortedA = parseString(stringA).split('').sort().join('');
+//   const sortedB = parseString(stringB).split('').sort().join('');
+
+//   return sortedA === sortedB;
+// }
 
 module.exports = anagrams;
