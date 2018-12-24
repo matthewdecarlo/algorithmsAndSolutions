@@ -7,6 +7,8 @@
 //   anagrams('rail safety', 'fairy tales') --> True
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
+// add solution solving with method to reduce and filter the difference within
+// two objects.
 const {generateCharacterSet} = require('../maxchar/index.js');
 
 function parseString(string) {
