@@ -31,4 +31,4 @@ function maxChar(string) {
   return findMaxCharacter(characterSet);
 }
 
-module.exports = maxChar;
+module.exports = {generateCharacterSet, maxChar};

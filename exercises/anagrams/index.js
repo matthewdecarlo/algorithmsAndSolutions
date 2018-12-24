@@ -7,7 +7,35 @@
 //   anagrams('rail safety', 'fairy tales') --> True
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
+const {generateCharacterSet} = require('../maxchar/index.js');
 
-function anagrams(stringA, stringB) {}
+function parseString(string) {
+  return string.replace(/[^\w]/g, '').toLowerCase();
+}
+
+function findDifference(setA, setB) {
+  const keys = Object.keys({...setA, ...setB});
+
+  return keys.reduce((filtered, key) => {
+    const isIdentical = setA[key] === setB[key];
+
+    if (isIdentical) return filtered;
+
+    filtered[key] = [setA[key], setB[key]];
+
+    return filtered
+  }, {});
+}
+
+function anagrams(stringA, stringB) {
+  const parsedA = parseString(stringA);
+  const parsedB = parseString(stringB);
+  const characterSetA = generateCharacterSet(parsedA);
+  const CharacterSetB = generateCharacterSet(parsedB);
+  const difference = findDifference(characterSetA, CharacterSetB);
+  const hasDifference = Object.keys(difference).length === 0;
+
+  return hasDifference;
+}
 
 module.exports = anagrams;
