@@ -8,6 +8,27 @@
 // chunk([1, 2, 3, 4, 5], 4) --> [[ 1, 2, 3, 4], [5]]
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
-function chunk(array, size) {}
+// add solution using reduce with conditionals
+function chunk(array, size) {
+  return array.reduce((chunks, value) => {
+    const length = chunks.length;
+    const isEmpty = length === 0;
+    
+    if (isEmpty) return [[value]];
+    
+    const currentChunk = chunks[length - 1];
+    const isSmallerThanSize = currentChunk.length < size;
+    
+    if (isSmallerThanSize) {
+      currentChunk.push(value)
+      return chunks;
+    }
+    else {
+      chunks.push([value]);
+    }
+
+    return chunks;
+  }, [])
+}
 
 module.exports = chunk;
