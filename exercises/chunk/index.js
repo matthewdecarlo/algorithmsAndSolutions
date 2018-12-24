@@ -21,6 +21,7 @@ function chunk(array, size) {
     
     if (isSmallerThanSize) {
       currentChunk.push(value)
+      
       return chunks;
     }
     else {
@@ -52,4 +53,18 @@ function chunk(array, size) {
 
 //   return chunks;
 // }
+
+// add method solving with while & slice
+// function chunk(array, size) {
+//   const chunks = [];
+//   let index = 0;
+
+//   while(index < array.length) {
+//     chunks.push(array.slice(index, index + size));
+//     index = index + size;
+//   }
+
+//   return chunks;
+// }
+
 module.exports = chunk;
